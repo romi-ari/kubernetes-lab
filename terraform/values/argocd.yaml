@@ -1,0 +1,10 @@
+---
+global:
+  image:
+    # argo cd latest version
+    tag: "v2.9.3"
+
+server:
+  extraArgs:
+  # server is configured to allow unauthenticated access
+    - --insecure
