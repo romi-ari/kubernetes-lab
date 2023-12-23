@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: git@gitlab.com:romi-ari/kube-lab-cd.git
     targetRevision: HEAD
-    path: app/app-deployment
+    path: app
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
