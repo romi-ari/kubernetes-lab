@@ -4,5 +4,5 @@ metadata:
   name: mongo-config
   namespace: simple-app
 data:
-  mongo-url: simple-app-service
+  mongo-url: mongo-service
 

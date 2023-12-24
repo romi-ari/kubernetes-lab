@@ -4,19 +4,19 @@ metadata:
   name: mongo-deployment
   namespace: simple-app
   labels:
-    app: mongo
+    app: mongo-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongo
+      app: mongo-deployment
   template:
     metadata:
       labels:
-        app: mongo
+        app: mongo-deployment
     spec:
       containers:
-      - name: mongodb
+      - name: mongo-deployment
         image: mongo:latest
         ports:
         - containerPort: 27017
@@ -39,7 +39,7 @@ metadata:
   namespace: simple-app
 spec:
   selector:
-    app: mongo
+    app: mongo-deployment
   ports:
     - protocol: TCP
       port: 27017
