@@ -1,0 +1,6 @@
+controller:
+  ingressClassResource:
+    name: nginx-romo
+    enabled: true
+    default: false
+    controllerValue: "k8s.io/ingress-nginx"

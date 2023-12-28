@@ -43,11 +43,10 @@ metadata:
   name: simple-app-service
   namespace: simple-app
 spec:
-  type: NodePort
   selector:
     app: simple-app
   ports:
-    - protocol: TCP
+      protocol: TCP
       port: 3000
       targetPort: 3000
-      nodePort: 31000
+  type: clusterIP
