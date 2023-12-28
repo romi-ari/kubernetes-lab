@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simple-app-ingress
+  namespace: simple-app
+  annotations:
+    kubernetes.io/ingress.class: nginx-romo
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: romo.me
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: simple-app-ingress
+                port:
+                  number: 3000
+    - host: www.romo.me
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: simple-app-ingress
+                port:
+                  number: 3000
