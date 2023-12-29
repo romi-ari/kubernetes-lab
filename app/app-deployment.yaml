@@ -4,7 +4,7 @@ metadata:
   name: simple-app-deployment
   namespace: simple-app
   labels:
-    app: simple-app
+    app: simple-app-deployment
 spec:
   replicas: 1
   selector:
