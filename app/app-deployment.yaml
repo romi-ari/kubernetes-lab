@@ -9,14 +9,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: simple-app
+      app: simple-app-deployment
   template:
     metadata:
       labels:
-        app: simple-app
+        app: simple-app-deployment
     spec:
       containers:
-      - name: simple-app
+      - name: simple-app-deployment
         image: nanajanashia/k8s-demo-app:v1.0
         ports:
         - containerPort: 3000
