@@ -44,7 +44,7 @@ metadata:
   namespace: simple-app
 spec:
   selector:
-    app: simple-app
+    app: simple-app-deployment
   ports:
     - name: http
       protocol: TCP
