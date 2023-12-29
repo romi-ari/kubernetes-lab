@@ -4,19 +4,19 @@ metadata:
   name: simple-app-deployment
   namespace: simple-app
   labels:
-    app: simple-app-deployment
+    app: simple-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: simple-app-deployment
+      app: simple-app
   template:
     metadata:
       labels:
-        app: simple-app-deployment
+        app: simple-app
     spec:
       containers:
-      - name: simple-app-deployment
+      - name: simple-app
         image: nanajanashia/k8s-demo-app:v1.0
         ports:
         - containerPort: 3000
@@ -44,7 +44,7 @@ metadata:
   namespace: simple-app
 spec:
   selector:
-    app: simple-app-deployment
+    app: simple-app
   ports:
     - name: http
       protocol: TCP
