@@ -20,10 +20,10 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: nginx-ingress-romo
+  name: nginx-ingress-certificate
   namespace: simple-app
 spec:
-  secretName: nginx-ingress-romo
+  secretName: nginx-ingress-certificate
   issuerRef:
     name: simple-app-encrypt
     kind: ClusterIssuer

@@ -13,7 +13,7 @@ spec:
   - hosts:
     - romiari.me
     - www.romiari.me
-    secretName: nginx-ingress-romo
+    secretName: nginx-ingress-certificate
   rules:
     - host: romiari.me
       http:
