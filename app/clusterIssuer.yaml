@@ -16,3 +16,14 @@ spec:
     - http01:
         ingress:
           class: nginx-romo
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nginx-ingress-romo
+  namespace: simple-app
+spec:
+  secretName: nginx-ingress-romo
+  issuerRef:
+    name: simple-app-encrypt
+    kind: ClusterIssuer
