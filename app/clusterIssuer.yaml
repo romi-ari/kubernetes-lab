@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt-prod
+  name: simple-app-encrypt
   namespace: simple-app
 spec:
   acme:
@@ -10,9 +10,27 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       # Name of a secret used to store the ACME account private key
-      name: letsencrypt-prod-private-key
+      name: simple-app-encrypt-prod
     # Add a single challenge solver, HTTP01 using nginx
     solvers:
     - http01:
         ingress:
           class: nginx-romo
+      selector: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nginx-ingress-certificate
+  namespace: simple-app
+spec:
+  secretName: nginx-ingress-certificate
+  duration: 24h
+  renewBefore: 12h
+  commonName: romiari.me
+  dnsNames:
+  - romiari.me
+  - www.romiari.me
+  issuerRef:
+    name: simple-app-encrypt
+    kind: ClusterIssuer
