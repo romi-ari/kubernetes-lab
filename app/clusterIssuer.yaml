@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: simple-app-encrypt
+  name: letsencrypt-prod
   namespace: simple-app
 spec:
   acme:
@@ -10,20 +10,9 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       # Name of a secret used to store the ACME account private key
-      name: simple-app-encrypt-prod
+      name: letsencrypt-prod-private-key
     # Add a single challenge solver, HTTP01 using nginx
     solvers:
     - http01:
         ingress:
           class: nginx-romo
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: nginx-ingress-certificate
-  namespace: simple-app
-spec:
-  secretName: nginx-ingress-certificate
-  issuerRef:
-    name: simple-app-encrypt
-    kind: ClusterIssuer
