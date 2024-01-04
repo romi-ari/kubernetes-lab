@@ -16,21 +16,3 @@ spec:
     - http01:
         ingress:
           class: nginx-romo
-      selector: {}
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: nginx-ingress-certificate
-  namespace: simple-app
-spec:
-  secretName: nginx-ingress-certificate
-  duration: 24h
-  renewBefore: 12h
-  commonName: romiari.me
-  dnsNames:
-  - romiari.me
-  - www.romiari.me
-  issuerRef:
-    name: simple-app-encrypt
-    kind: ClusterIssuer

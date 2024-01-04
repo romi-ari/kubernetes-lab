@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nginx-ingress-certificate
+  namespace: simple-app
+spec:
+  dnsNames:
+  - romiari.me
+  secretName: nginx-ingress-certificate
+  issuerRef:
+    name: simple-app-encrypt
+    kind: ClusterIssuer
