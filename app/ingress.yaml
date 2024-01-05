@@ -6,7 +6,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx-romo
     nginx.ingress.kubernetes.io/rewrite-target: /
-    certmanager.k8s.io/cluster-issuer: simple-app-encrypt
+    cert-manager.io/cluster-issuer: simple-app-encrypt
 spec:
   ingressClassName: nginx-romo
   tls:
