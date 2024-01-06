@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server-ingress-romo
+  namespace: argocd-romo
+  annotations:
+    kubernetes.io/ingress.class: nginx-romo
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx-romo
+  rules:
+  - host: argo.romiari.me
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: argocd-romo-server
+            port:
+              number: 8081
+
+
