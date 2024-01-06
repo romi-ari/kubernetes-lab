@@ -14,6 +14,7 @@ spec:
   tls:
   - hosts:
     - romiari.me
+    - www.romiari.me
     secretName: nginx-ingress-certificate
   rules:
     - host: romiari.me

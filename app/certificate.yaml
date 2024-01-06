@@ -6,6 +6,7 @@ metadata:
 spec:
   dnsNames:
   - romiari.me
+  - www.romiari.me
   secretName: nginx-ingress-certificate
   issuerRef:
     name: simple-app-encrypt
