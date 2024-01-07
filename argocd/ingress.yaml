@@ -6,8 +6,14 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx-romo
     nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: simple-app-encrypt
 spec:
   ingressClassName: nginx-romo
+  tls:
+  - hosts:
+    - romiari.me
+    - www.romiari.me
+    secretName: nginx-ingress-certificate
   rules:
   - host: argo.romiari.me
     http:
