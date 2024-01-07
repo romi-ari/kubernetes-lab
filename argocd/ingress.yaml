@@ -23,6 +23,6 @@ spec:
           service:
             name: argocd-romo-server
             port:
-              number: 8081
+              name: https
 
 
