@@ -7,6 +7,7 @@ spec:
   dnsNames:
   - romiari.me
   - www.romiari.me
+  - argo.romiari.me
   secretName: nginx-ingress-certificate
   issuerRef:
     name: simple-app-encrypt
