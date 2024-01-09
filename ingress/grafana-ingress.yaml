@@ -12,7 +12,7 @@ spec:
   tls:
   - hosts:
     - grafana.romiari.me
-    secretName: nginx-ingress-certificate
+    secretName: grafana-ingress-secret
   rules:
   - host: grafana.romiari.me
     http:
