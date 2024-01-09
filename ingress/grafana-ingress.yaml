@@ -23,6 +23,6 @@ spec:
           service:
             name: monitoring-grafana
             port:
-              name: 80
+              number: 80
 
 

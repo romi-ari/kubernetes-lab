@@ -23,6 +23,6 @@ spec:
           service:
             name: monitoring-kube-prometheus-prometheus
             port:
-              name: 9090
+              number: 9090
 
 
