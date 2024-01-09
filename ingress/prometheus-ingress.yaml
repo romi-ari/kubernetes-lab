@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: prometheus-ingress
+  namespace: argocd-romo
+  annotations:
+    kubernetes.io/ingress.class: nginx-romo
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: simple-app-encrypt
+spec:
+  ingressClassName: nginx-romo
+  tls:
+  - hosts:
+    - prometheus.romiari.me
+    secretName: nginx-ingress-certificate
+  rules:
+  - host: argo.romiari.me
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: monitoring-kube-prometheus-prometheus
+            port:
+              name: 9090
+
+

@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: argocd-server-ingress-romo
+  name: argocd-ingress
   namespace: argocd-romo
   annotations:
     kubernetes.io/ingress.class: nginx-romo

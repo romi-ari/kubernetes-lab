@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: git@gitlab.com:romi-ari/kube-lab-cd.git
     targetRevision: HEAD
-    path: argocd
+    path: ingress
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:

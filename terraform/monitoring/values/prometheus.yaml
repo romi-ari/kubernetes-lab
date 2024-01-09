@@ -1,0 +1,19 @@
+defaultRules:
+  rules:
+    etcd: false
+    kubeScheduler: false
+kubeControllerManager:
+  enabled: false
+kubeEtcd:
+  enabled: false
+kubeScheduler:
+  enabled: false
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelector:
+      matchLabels:
+        prometheus: monitoring-kube
+commonLabels:
+  prometheus: monitoring-kube
+grafana:
+  adminPassword: admin-kube
