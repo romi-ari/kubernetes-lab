@@ -14,7 +14,7 @@ spec:
     - prometheus.romiari.me
     secretName: nginx-ingress-certificate
   rules:
-  - host: argo.romiari.me
+  - host: prometheus.romiari.me
     http:
       paths:
       - pathType: Prefix
