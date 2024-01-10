@@ -9,7 +9,6 @@ metadata:
     cert-manager.io/cluster-issuer: simple-app-encrypt
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   ingressClassName: nginx-romo
   tls:
