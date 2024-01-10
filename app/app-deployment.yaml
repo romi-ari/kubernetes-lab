@@ -46,7 +46,7 @@ spec:
   selector:
     app: simple-app
   ports:
-    - name: https
+    - name: http
       protocol: TCP
       port: 3000
       targetPort: 3000
