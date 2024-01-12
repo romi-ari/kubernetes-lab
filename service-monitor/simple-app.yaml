@@ -4,15 +4,14 @@ metadata:
   name: simple-app
   namespace: monitoring
   labels:
-    app: simple-app
     prometheus: monitoring-kube
 spec:
   endpoints:
-  - interval: 30s
-    port: http
+  - port: http
+    interval: 30s
   namespaceSelector:
     matchNames:
     - simple-app
   selector:
     matchLabels:
-      app: simple-app
+      argocd.argoproj.io/instance: simple-app
