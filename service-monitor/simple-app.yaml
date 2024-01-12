@@ -1,5 +1,5 @@
 apiVersion: monitoring.coreis.com/v1
-kind: serviceMonitor
+kind: ServiceMonitor
 metadata:
   labels:
   name: simple-app
