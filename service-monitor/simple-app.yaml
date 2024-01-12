@@ -5,7 +5,7 @@ metadata:
   namespace: monitoring
   labels:
     app: simple-app
-    release: monitoring
+    prometheus: monitoring-kube
 spec:
   endpoints:
   - interval: 30s
