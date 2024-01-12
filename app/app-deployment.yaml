@@ -5,13 +5,11 @@ metadata:
   namespace: simple-app
   labels:
     app: simple-app
-    release: monitoring
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: simple-app
-      release: monitoring
   template:
     metadata:
       labels:
