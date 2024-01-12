@@ -10,7 +10,9 @@ spec:
   endpoints:
   - interval: 30s
     port: http
+  namespaceSelector:
+    matchNames:
+    - simple-app
   selector:
     matchLabels:
       app: simple-app
-      release: monitoring
