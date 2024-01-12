@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: simple-app
-        image: romiari/k8s-demo-app:v2.0
+        image: romiari/k8s-demo-app:v2.1
         ports:
         - containerPort: 8020
         env:
