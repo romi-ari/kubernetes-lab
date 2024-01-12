@@ -1,9 +1,10 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  labels:
   name: simple-app
   namespace: monitoring
+  labels:
+    app: simple-app
 spec:
   endpoints:
   - interval: 30s
