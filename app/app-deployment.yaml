@@ -10,6 +10,7 @@ spec:
   selector:
     matchLabels:
       app: simple-app
+      release: monitoring
   template:
     metadata:
       labels:
@@ -47,6 +48,7 @@ metadata:
 spec:
   selector:
     app: simple-app
+    release: monitoring
   ports:
     - name: http
       protocol: TCP
