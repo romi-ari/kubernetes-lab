@@ -3,7 +3,7 @@ kind: ServiceMonitor
 metadata:
   labels:
   name: simple-app
-  namespace: default
+  namespace: monitoring
 spec:
   endpoints:
   - interval: 30s
