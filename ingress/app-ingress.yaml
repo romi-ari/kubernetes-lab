@@ -16,7 +16,7 @@ spec:
   - hosts:
     - romiari.me
     - www.romiari.me
-    secretName: nginx-ingress-certificate
+    secretName: simple-app-certificate
   rules:
     - host: romiari.me
       http:
