@@ -5,6 +5,7 @@ metadata:
   namespace: monitoring
   labels:
     app: simple-app
+    release: monitoring
 spec:
   endpoints:
   - interval: 30s
