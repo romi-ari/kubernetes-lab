@@ -44,11 +44,9 @@ metadata:
   namespace: simple-app
   labels:
     app: simple-app
-    release: monitoring
 spec:
   selector:
     app: simple-app
-    release: monitoring
   ports:
     - name: http
       protocol: TCP
