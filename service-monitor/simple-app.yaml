@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreis.com/v1
+kind: serviceMonitor
+metadata:
+  labels:
+  name: simple-app
+  namespace: default
+spec:
+  endpoints:
+  - interval: 30s
+    port: http
+  selector:
+    matchLabels:
+      app: simple-app
