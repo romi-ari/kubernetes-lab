@@ -9,7 +9,7 @@ metadata:
 spec:
   endpoints:
   - interval: 30s
-    port: 3000
+    port: http
   selector:
     matchLabels:
       app: simple-app
