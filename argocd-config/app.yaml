@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: simple-app
+  name: argocd-simple-app
   namespace: argocd-romo
   # Remove k8s resources when argocd app is removed
   finalizers:
