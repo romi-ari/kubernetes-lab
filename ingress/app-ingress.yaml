@@ -1,11 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: simple-app-ingress
-  namespace: simple-app
+  name: example-app-ingress
+  namespace: ingress
   annotations:
     kubernetes.io/ingress.class: nginx-romo
-    cert-manager.io/cluster-issuer: simple-app-encrypt
+    cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "true" 
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
@@ -16,7 +16,7 @@ spec:
   - hosts:
     - romiari.me
     - www.romiari.me
-    secretName: simple-app-certificate
+    secretName: example-app-secret
   rules:
     - host: romiari.me
       http:
@@ -25,7 +25,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: simple-app-service
+                name: example-app-service
                 port:
                   number: 8020
     - host: www.romiari.me
@@ -35,6 +35,6 @@ spec:
             path: "/"
             backend:
               service:
-                name: simple-app-service
+                name: example-app-service
                 port:
                   number: 8020

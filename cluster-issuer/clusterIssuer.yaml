@@ -1,8 +1,8 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: simple-app-encrypt
-  namespace: simple-app
+  name: letsencrypt-prod
+  namespace: cluster-issuer
 spec:
   acme:
     # Email address used for ACME registration
@@ -10,7 +10,7 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       # Name of a secret used to store the ACME account private key
-      name: simple-app-encrypt-prod
+      name: letsencrypt-prod-private-key
     # Add a single challenge solver, HTTP01 using nginx
     solvers:
     - http01:

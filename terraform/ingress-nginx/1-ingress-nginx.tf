@@ -6,6 +6,7 @@ resource "helm_release" "ingress-nginx-romo" {
     repository          = "https://kubernetes.github.io/ingress-nginx"
     chart               = "ingress-nginx"
     namespace           = "ingress-nginx-romo"
+    version             = "4.9.0"
     create_namespace    = true
 
     values = [file("values/ingress-class.yaml")]

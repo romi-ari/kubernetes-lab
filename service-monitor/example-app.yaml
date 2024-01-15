@@ -1,7 +1,7 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: simple-app
+  name: example-app-svm
   namespace: monitoring
   labels:
     prometheus: monitoring-kube
@@ -11,7 +11,7 @@ spec:
     interval: 30s
   namespaceSelector:
     matchNames:
-    - simple-app
+    - example-app
   selector:
     matchLabels:
-      argocd.argoproj.io/instance: simple-app
+    - simple-app

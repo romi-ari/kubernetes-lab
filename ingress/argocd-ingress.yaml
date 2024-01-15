@@ -6,13 +6,13 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx-romo
     nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/cluster-issuer: simple-app-encrypt
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: nginx-romo
   tls:
   - hosts:
     - argo.romiari.me
-    secretName: nginx-ingress-certificate
+    secretName: argocd-ingress-secret
   rules:
   - host: argo.romiari.me
     http:

@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-app-deployment
-  namespace: simple-app
+  name: example-app-deployment
+  namespace: example-app
   labels:
-    app: simple-app
+    app: example-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: simple-app
+      app: example-app
   template:
     metadata:
       labels:
-        app: simple-app
+        app: example-app
     spec:
       containers:
-      - name: simple-app
+      - name: example-app
         image: romiari/k8s-demo-app:v3.1
         ports:
         - containerPort: 8020
@@ -40,13 +40,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: simple-app-service
-  namespace: simple-app
+  name: example-app-service
+  namespace: example-app
   labels:
-    app: simple-app
+    app: example-app
 spec:
   selector:
-    app: simple-app
+    app: example-app
   ports:
     - name: http
       protocol: TCP
