@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: example-app-ingress
-  namespace: ingress-nginx-romo
+  namespace: example-app
   annotations:
     kubernetes.io/ingress.class: nginx-romo
     cert-manager.io/cluster-issuer: letsencrypt-prod
