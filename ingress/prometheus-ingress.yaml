@@ -12,7 +12,7 @@ spec:
   tls:
   - hosts:
     - prometheus.romiari.me
-    secretName: nginx-ingress-certificate
+    secretName: prometheus-ingress-secret
   rules:
   - host: prometheus.romiari.me
     http:
