@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: romiari/k8s-demo-app:v3.1
+        image: romiari/k8s-demo-app:v3.2
         ports:
         - containerPort: 8020
         env:
