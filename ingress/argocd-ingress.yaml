@@ -8,6 +8,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/limit-connections: "5"
+    nginx.ingress.kubernetes.io/whitelist-source-range: 66.96.225.135
 spec:
   ingressClassName: nginx-romo
   tls:
