@@ -9,8 +9,9 @@ resource "digitalocean_kubernetes_cluster" "romo" {
   node_pool {
     name       = "worker-pool"
     size       = "s-2vcpu-4gb"
-    auto_scale = false
-    node_count = 3
+    auto_scale = true
+    min_nodes  = 1
+    max_nodes  = 3
     labels     = {
       "service" = "kube-lab"
     }  
