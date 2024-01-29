@@ -1,0 +1,43 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: locust-deployment
+  namespace: locust
+  labels:
+    app: locust
+spec: 
+  selector: 
+    matchLabels: 
+      app: locust
+  template: 
+    metadata: 
+      labels: 
+        app: locust
+    spec: 
+      containers: 
+        - name: locust
+          image: locustio/locust 
+          ports: 
+            - containerPort: 8089 
+          volumeMounts: 
+            - mountPath: /home/locust 
+              name: locust-script 
+      volumes: 
+        - name: locust-script 
+          configMap: 
+            name: locust-script 
+--- 
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: locust-service
+  namespace: locust
+spec: 
+  selector:
+    app: locust
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8089
+      targetPort: 8089
+  type: ClusterIP
