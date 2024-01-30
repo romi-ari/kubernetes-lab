@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-example-app
+  name: argocd-locust
   namespace: argocd-romo
   # Remove k8s resources when argocd app is removed
   finalizers:
@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: git@gitlab.com:romi-ari/kube-lab-cd.git
     targetRevision: HEAD
-    path: app
+    path: app/locust
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:

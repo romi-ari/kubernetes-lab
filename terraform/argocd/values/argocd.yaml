@@ -8,6 +8,4 @@ server:
   extraArgs:
   # server is configured to allow unauthenticated access
     - --insecure
-    
-service:
-  externalTrafficPolicy: "Local"
+
